@@ -1,6 +1,7 @@
 import os
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
+import constants
 
 
 def run_recon_all(subdir):
@@ -32,7 +33,7 @@ def main():
     subdirs = [os.path.join(pre_mri_path, d) for d in os.listdir(pre_mri_path) if os.path.isdir(os.path.join(pre_mri_path, d))]
 
     # Run recon-all in parallel with batches of 4
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=constants.NUM_OF_CPU_CORES) as executor:
         executor.map(run_recon_all, subdirs)
 
 if __name__ == "__main__":

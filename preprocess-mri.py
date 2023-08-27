@@ -9,6 +9,7 @@ import glob
 import nibabel as nib
 import numpy as np
 import warnings
+import constants
 
 warnings.filterwarnings('ignore')
 
@@ -99,7 +100,7 @@ def run_denoise_script(input_folder="pre_mri"):
     # Initialize tqdm progress bar
     with tqdm(total=len(os.listdir(input_folder))) as pbar:
         # Use ThreadPoolExecutor to parallelize the task
-        with ThreadPoolExecutor(max_workers=4) as executor:
+        with ThreadPoolExecutor(max_workers=constants.NUM_OF_CPU_CORES) as executor:
             futures = []
             for subdir in os.listdir(input_folder):
                 if subdir.startswith("sub-"):
