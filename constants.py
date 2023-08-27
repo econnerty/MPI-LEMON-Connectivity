@@ -1,0 +1,1 @@
+FREESURFER_HOME = '/home/aiisc/Downloads/freesurfer'
