@@ -1,2 +1,2 @@
-pre_mri/
-logs/
+pre_mri/*
+logs/*
