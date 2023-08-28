@@ -52,30 +52,30 @@ def process_images(uni_filename, inv1_filename, inv2_filename, output_filename):
     print(uni_filename)
     # Load Data
     UNIhdr = nib.load(uni_filename)
-    UNIimg = np.array(UNIhdr.dataobj).astype(float)
+    UNIimg = np.array(UNIhdr.dataobj).astype(np.float64)
 
     INV1hdr = nib.load(inv1_filename)
-    INV1img = np.array(INV1hdr.dataobj).astype(float)
+    INV1img = np.array(INV1hdr.dataobj).astype(np.float64)
 
     INV2hdr = nib.load(inv2_filename)
-    INV2img = np.array(INV2hdr.dataobj).astype(float)
+    INV2img = np.array(INV2hdr.dataobj).astype(np.float64)
 
     # Compute correct INV1 dataset
     INV1img = np.sign(UNIimg) * INV1img
-    INV1pos = rootsquares_pos(-UNIimg, INV2img, -INV2img**2 * UNIimg)
-    INV1neg = rootsquares_neg(-UNIimg, INV2img, -INV2img**2 * UNIimg)
+    INV1pos = rootsquares_pos(-UNIimg, INV2img, -INV2img**2 * UNIimg).astype(np.float64)
+    INV1neg = rootsquares_neg(-UNIimg, INV2img, -INV2img**2 * UNIimg).astype(np.float64)
 
-    INV1final = INV1img
+    INV1final = INV1img.copy().astype(np.float64)
     INV1final[np.abs(INV1img-INV1pos) > np.abs(INV1img-INV1neg)] = INV1neg[np.abs(INV1img-INV1pos) > np.abs(INV1img-INV1neg)]
     INV1final[np.abs(INV1img-INV1pos) <= np.abs(INV1img-INV1neg)] = INV1pos[np.abs(INV1img-INV1pos) <= np.abs(INV1img-INV1neg)]
 
     # Calculate lambda (Regularization)
-    multiplyingFactor = 10  # Set this value as required
-    noiselevel = multiplyingFactor * np.mean(INV2img[:, -10:, -10:])
-    MP2RAGEimgRobustPhaseSensitive = MP2RAGErobustfunc(INV1final, INV2img, noiselevel**2)
+    multiplyingFactor = 60  # Set this value as required
+    noiselevel = (multiplyingFactor * np.mean(INV2img[:, -10:, -10:])).astype(np.float64)
+    MP2RAGEimgRobustPhaseSensitive = MP2RAGErobustfunc(INV1final, INV2img, noiselevel**2).astype(np.float64)
 
     # Save data
-    new_image = nib.Nifti1Image(MP2RAGEimgRobustPhaseSensitive, affine=UNIhdr.affine)
+    new_image = nib.Nifti1Image(MP2RAGEimgRobustPhaseSensitive.astype(np.float64), affine=UNIhdr.affine)
     nib.save(new_image, output_filename)
 
 

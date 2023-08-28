@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the FreeSurfer environment variables
-export FREESURFER_HOME=/home/aiisc/Downloads/freesurfer
+export FREESURFER_HOME=/home/erikc/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
 # Run the Python script

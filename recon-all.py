@@ -13,13 +13,19 @@ def run_recon_all(subdir):
         '-s', subject_name,
         '-all'
     ]
+    cmd2 = [
+        'mne',
+        'watershed', 'bem',
+        '-s', subject_name
+    ]
     
     # Create or open a log file to capture stdout and stderr
     with open(f"./logs/log_{subject_name}.txt", "w") as log_file:
         print(f"Processing: {subject_name}")  # Print subject currently being processed
         
         try:
-            subprocess.run(cmd, stdout=log_file, stderr=log_file, check=True)
+            subprocess.run(cmd, stdout=log_file, stderr=log_file, check=True) #recon all
+            subprocess.run(cmd2, stdout=log_file, stderr=log_file, check=True) #bem solution
             print(f"Successfully processed {subject_name}")
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while processing {subject_name}: {e}")
