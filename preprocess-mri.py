@@ -48,11 +48,12 @@ def rootsquares_pos(a, b, c):
 def rootsquares_neg(a, b, c):
     return (-b - np.sqrt(b**2 - 4*a*c)) / (2*a)
 
-def process_images(uni_filename, inv1_filename, inv2_filename, output_filename):
+def process_images(uni_filename, inv1_filename, inv2_filename, output_filename, integerformat=0):
     print(uni_filename)
     # Load Data
     UNIhdr = nib.load(uni_filename)
     UNIimg = np.array(UNIhdr.dataobj).astype(np.float64)
+
 
     INV1hdr = nib.load(inv1_filename)
     INV1img = np.array(INV1hdr.dataobj).astype(np.float64)
@@ -71,12 +72,19 @@ def process_images(uni_filename, inv1_filename, inv2_filename, output_filename):
 
     # Calculate lambda (Regularization)
     multiplyingFactor = 60  # Set this value as required
-    noiselevel = (multiplyingFactor * np.mean(INV2img[:, -10:, -10:])).astype(np.float64)
+    noiselevel = (multiplyingFactor * np.mean(INV2img[:, -10:, -10:].mean(axis=1).mean(axis=1))).astype(np.float64)
     MP2RAGEimgRobustPhaseSensitive = MP2RAGErobustfunc(INV1final, INV2img, noiselevel**2).astype(np.float64)
 
-    # Save data
-    new_image = nib.Nifti1Image(MP2RAGEimgRobustPhaseSensitive.astype(np.float64), affine=UNIhdr.affine)
+    # Save a nifti-file
+    print(f'Saving: {output_filename}')
+    if integerformat == 0:
+        final_image = MP2RAGEimgRobustPhaseSensitive.astype(np.float64)
+    else:
+        final_image = np.round(4095 * (MP2RAGEimgRobustPhaseSensitive + 0.5)).astype(np.int16)
+
+    new_image = nib.Nifti1Image(final_image)
     nib.save(new_image, output_filename)
+
 
 
 def run_single_denoise_script(subdir):
