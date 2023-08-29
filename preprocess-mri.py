@@ -39,51 +39,89 @@ def extract_and_remove_tar_files(folder_path):
         with ThreadPoolExecutor() as executor:
             executor.map(extract_and_remove_single_tar, tar_files, [folder_path] * len(tar_files), [pbar] * len(tar_files))
 
+
+
+##This set of functions taken from  https://github.com/khanlab/tar2bids/blob/master/etc/mp2rage_genUniDen.py
 def MP2RAGErobustfunc(INV1, INV2, beta):
-    return (np.conj(INV1) * INV2 - beta) / (INV1**2 + INV2**2 + 2*beta)
+    # matalb: MP2RAGErobustfunc=@(INV1,INV2,beta)(conj(INV1).*INV2-beta)./(INV1.^2+INV2.^2+2*beta);
+    return (np.conj(INV1)*INV2-beta)/(INV1**2+INV2**2+2*beta)
+
 
 def rootsquares_pos(a, b, c):
-    return (-b + np.sqrt(b**2 - 4*a*c)) / (2*a)
+    # matlab:rootsquares_pos=@(a, b, c)(-b+sqrt(b. ^ 2 - 4 * a.*c))./(2*a)
+    return (-b+np.sqrt(b**2 - 4*a*c))/(2*a)
+
 
 def rootsquares_neg(a, b, c):
-    return (-b - np.sqrt(b**2 - 4*a*c)) / (2*a)
+    # matlab: rootsquares_neg = @(a, b, c)(-b-sqrt(b. ^ 2 - 4 * a.*c))./(2*a)
+    return (-b-np.sqrt(b**2 - 4*a*c))/(2*a)
 
 def process_images(uni_filename, inv1_filename, inv2_filename, output_filename, integerformat=0):
-    print(uni_filename)
-    # Load Data
-    UNIhdr = nib.load(uni_filename)
-    UNIimg = np.array(UNIhdr.dataobj).astype(np.float64)
+    #########
+    # load data
+    #########
+    MP2RAGEimg = nib.load(uni_filename)
+    INV1img = nib.load(inv1_filename)
+    INV2img = nib.load(inv2_filename)
 
+    MP2RAGEimg_img = MP2RAGEimg.get_fdata()
+    INV1img_img = INV1img.get_fdata()
+    INV2img_img = INV2img.get_fdata()
 
-    INV1hdr = nib.load(inv1_filename)
-    INV1img = np.array(INV1hdr.dataobj).astype(np.float64)
-
-    INV2hdr = nib.load(inv2_filename)
-    INV2img = np.array(INV2hdr.dataobj).astype(np.float64)
-
-    # Compute correct INV1 dataset
-    INV1img = np.sign(UNIimg) * INV1img
-    INV1pos = rootsquares_pos(-UNIimg, INV2img, -INV2img**2 * UNIimg).astype(np.float64)
-    INV1neg = rootsquares_neg(-UNIimg, INV2img, -INV2img**2 * UNIimg).astype(np.float64)
-
-    INV1final = INV1img.copy().astype(np.float64)
-    INV1final[np.abs(INV1img-INV1pos) > np.abs(INV1img-INV1neg)] = INV1neg[np.abs(INV1img-INV1pos) > np.abs(INV1img-INV1neg)]
-    INV1final[np.abs(INV1img-INV1pos) <= np.abs(INV1img-INV1neg)] = INV1pos[np.abs(INV1img-INV1pos) <= np.abs(INV1img-INV1neg)]
-
-    # Calculate lambda (Regularization)
-    multiplyingFactor = 60  # Set this value as required
-    noiselevel = (multiplyingFactor * np.mean(INV2img[:, -10:, -10:].mean(axis=1).mean(axis=1))).astype(np.float64)
-    MP2RAGEimgRobustPhaseSensitive = MP2RAGErobustfunc(INV1final, INV2img, noiselevel**2).astype(np.float64)
-
-    # Save a nifti-file
-    print(f'Saving: {output_filename}')
-    if integerformat == 0:
-        final_image = MP2RAGEimgRobustPhaseSensitive.astype(np.float64)
+    if MP2RAGEimg_img.min() >= 0 and MP2RAGEimg_img.max() >= 0.51:
+       # converts MP2RAGE to -0.5 to 0.5 scale - assumes that it is getting only positive values
+        MP2RAGEimg_img = (
+            MP2RAGEimg_img - MP2RAGEimg_img.max()/2)/MP2RAGEimg_img.max()
+        integerformat = 1
     else:
-        final_image = np.round(4095 * (MP2RAGEimgRobustPhaseSensitive + 0.5)).astype(np.int16)
+        integerformat = 0
 
-    new_image = nib.Nifti1Image(final_image)
-    nib.save(new_image, output_filename)
+    #########
+    # computes correct INV1 dataset
+    #########
+    # gives the correct polarity to INV1
+    INV1img_img = np.sign(MP2RAGEimg_img)*INV1img_img
+
+    # because the MP2RAGE INV1 and INV2 is a sum of squares data, while the
+    # MP2RAGEimg is a phase sensitive coil combination.. some more maths has to
+    # be performed to get a better INV1 estimate which here is done by assuming
+    # both INV2 is closer to a real phase sensitive combination
+
+    # INV1pos=rootsquares_pos(-MP2RAGEimg.img,INV2img.img,-INV2img.img.^2.*MP2RAGEimg.img);
+    INV1pos = rootsquares_pos(-MP2RAGEimg_img,
+                              INV2img_img, -INV2img_img**2*MP2RAGEimg_img)
+    INV1neg = rootsquares_neg(-MP2RAGEimg_img,
+                              INV2img_img, -INV2img_img**2*MP2RAGEimg_img)
+
+    INV1final = INV1img_img
+
+    INV1final[np.absolute(INV1img_img-INV1pos) > np.absolute(INV1img_img-INV1neg)
+              ] = INV1neg[np.absolute(INV1img_img-INV1pos) > np.absolute(INV1img_img-INV1neg)]
+    INV1final[np.absolute(INV1img_img-INV1pos) <= np.absolute(INV1img_img-INV1neg)
+              ] = INV1pos[np.absolute(INV1img_img-INV1pos) <= np.absolute(INV1img_img-INV1neg)]
+
+    # usually the multiplicative factor shouldn't be greater then 10, but that
+    # is not the ase when the image is bias field corrected, in which case the
+    # noise estimated at the edge of the imagemight not be such a good measure
+
+    multiplyingFactor = 55
+    noiselevel = multiplyingFactor*np.mean(INV2img_img[:, -11:, -11:])
+
+    # % MP2RAGEimgRobustScanner = MP2RAGErobustfunc(INV1img.img, INV2img.img, noiselevel. ^ 2)
+    MP2RAGEimgRobustPhaseSensitive = MP2RAGErobustfunc(
+        INV1final, INV2img_img, noiselevel**2)
+
+    if integerformat == 0:
+        MP2RAGEimg_img = MP2RAGEimgRobustPhaseSensitive
+    else:
+        MP2RAGEimg_img = np.round(4095*(MP2RAGEimgRobustPhaseSensitive+0.5))
+
+    #########
+    # save image
+    #########
+    MP2RAGEimg_img = nib.casting.float_to_int(MP2RAGEimg_img,'int16');
+    new_MP2RAGEimg = nib.Nifti1Image(MP2RAGEimg_img, MP2RAGEimg.affine, MP2RAGEimg.header)
+    nib.save(new_MP2RAGEimg, output_filename)
 
 
 
