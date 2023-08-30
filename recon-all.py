@@ -15,23 +15,29 @@ def run_recon_all(subdir):
     ]
     cmd2 = [
         'mne',
-        'watershed', 'bem',
+        'watershed_bem',
         '-s', subject_name
     ]
-    
+    os.mkdir(f"./logs/{subject_name}")
     # Create or open a log file to capture stdout and stderr
-    with open(f"./logs/log_{subject_name}.txt", "w") as log_file:
+    with open(f"./logs/{subject_name}/recon_all_{subject_name}.txt", "w") as log_file:
         print(f"Processing: {subject_name}")  # Print subject currently being processed
         
         try:
             subprocess.run(cmd, stdout=log_file, stderr=log_file, check=True) #recon all
+            print(f"Successfully processed {subject_name}")
+        except subprocess.CalledProcessError as e:
+            print(f"An error occurred while processing {subject_name}: {e}")
+    # Create or open a log file to capture stdout and stderr
+    with open(f"./logs/{subject_name}/mne_watershed_{subject_name}.txt", "w") as log_file:
+        print(f"Processing: {subject_name}")  # Print subject currently being processed   
+        try:
             subprocess.run(cmd2, stdout=log_file, stderr=log_file, check=True) #bem solution
             print(f"Successfully processed {subject_name}")
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while processing {subject_name}: {e}")
-
-
-
+                
+                
 
 def main():
     # Get a list of all folders within 'pre_mri'
