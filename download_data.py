@@ -38,7 +38,7 @@ def download_file(url, pbar):
             else:
                 print(f"Failed to download {filename}. Retrying...")
                 
-            time.sleep(100)  # Waiting 5 seconds before retrying
+            time.sleep(60)  # Waiting 5 seconds before retrying
         except Exception as e:
             print(f"An error occurred while downloading {filename}: {e}. Retrying...")
         retries += 1
