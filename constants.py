@@ -1,2 +1,2 @@
-FREESURFER_HOME = '/home/erikc/freesurfer'
-NUM_OF_CPU_CORES =8
+FREESURFER_HOME = '/scratch/MPI-LEMON/freesurfer'
+NUM_OF_CPU_CORES =48
