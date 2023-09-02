@@ -52,7 +52,7 @@ def fetch_urls(page_url):
     soup = BeautifulSoup(response.text, 'html.parser')
     
     for i in range(1, 6):
-        column_class = f"col{i}-preproc"
+        column_class = f"col{i}-raw"
         for input_tag in soup.find_all('input', {'class': column_class, 'type': 'checkbox'}):
             url = input_tag.get('value')
             if url:

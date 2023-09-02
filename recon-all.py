@@ -18,7 +18,11 @@ def run_recon_all(subdir):
         'watershed_bem',
         '-s', subject_name
     ]
-    os.mkdir(f"./logs/{subject_name}")
+    try:
+        os.makedirs(f"./logs/{subject_name}", exist_ok=True)
+    except Exception as e:
+        print(f"Failed to create directory: {e}")
+        return
     # Create or open a log file to capture stdout and stderr
     with open(f"./logs/{subject_name}/recon_all_{subject_name}.txt", "w") as log_file:
         print(f"Processing: {subject_name}")  # Print subject currently being processed
