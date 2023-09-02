@@ -67,5 +67,5 @@ if __name__ == "__main__":
 
     pbar = tqdm(total=len(raw_data_urls))
 
-    with ThreadPoolExecutor(max_workers=1) as executor:
+    with ThreadPoolExecutor(max_workers=8) as executor:
         executor.map(lambda url: download_file(url, pbar), raw_data_urls)
