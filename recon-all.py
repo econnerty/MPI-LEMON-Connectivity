@@ -18,7 +18,12 @@ def run_recon_all(subdir):
         'watershed_bem',
         '-s', subject_name
     ]
-    os.mkdir(f"./logs/{subject_name}")
+    try:
+        os.makedirs(f"./logs/{subject_name}", exist_ok=True)
+    except Exception as e:
+        print(f"Failed to create directory: {e}")
+        return
+
     # Create or open a log file to capture stdout and stderr
     with open(f"./logs/{subject_name}/recon_all_{subject_name}.txt", "w") as log_file:
         print(f"Processing: {subject_name}")  # Print subject currently being processed
@@ -43,7 +48,6 @@ def main():
     # Get a list of all folders within 'pre_mri'
     pre_mri_path = 'pre_mri'  # Update this to the full path if necessary
     subdirs = [os.path.join(pre_mri_path, d) for d in os.listdir(pre_mri_path) if os.path.isdir(os.path.join(pre_mri_path, d))]
-
     # Run recon-all in parallel with batches of 4
     with ThreadPoolExecutor(max_workers=constants.NUM_OF_CPU_CORES) as executor:
         executor.map(run_recon_all, subdirs)
