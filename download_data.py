@@ -52,7 +52,7 @@ def fetch_urls(page_url):
     soup = BeautifulSoup(response.text, 'html.parser')
     
     for i in range(1, 6):
-        column_class = f"col{i}-preproc"
+        column_class = f"col{i}-raw"
         for input_tag in soup.find_all('input', {'class': column_class, 'type': 'checkbox'}):
             url = input_tag.get('value')
             if url:
@@ -67,5 +67,5 @@ if __name__ == "__main__":
 
     pbar = tqdm(total=len(raw_data_urls))
 
-    with ThreadPoolExecutor(max_workers=1) as executor:
+    with ThreadPoolExecutor(max_workers=8) as executor:
         executor.map(lambda url: download_file(url, pbar), raw_data_urls)
