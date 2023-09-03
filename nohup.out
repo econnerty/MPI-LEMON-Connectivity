@@ -1,0 +1,80 @@
+Processing: sub-032433
+Processing: sub-032411
+Processing: sub-032383
+Processing: sub-032470
+Processing: sub-032526
+Processing: sub-032418
+Processing: sub-032359
+Processing: sub-032327
+Processing: sub-032369Processing: sub-032521
+
+Processing: sub-032528
+Processing: sub-032482Processing: sub-032487
+
+Processing: sub-032395
+Processing: sub-032506Processing: sub-032396
+
+Processing: sub-032503Processing: sub-032315
+
+Processing: sub-032450Processing: sub-032484
+Processing: sub-032392Processing: sub-032362
+
+
+Processing: sub-032332
+Processing: sub-032389
+Processing: sub-032414
+Processing: sub-032342
+Processing: sub-032438
+Processing: sub-032336
+Processing: sub-032394Processing: sub-032382
+Processing: sub-032387Processing: sub-032410
+
+
+Processing: sub-032460Processing: sub-032334
+
+Processing: sub-032397
+Processing: sub-032352Processing: sub-032310
+
+Processing: sub-032324
+Processing: sub-032338Processing: sub-032379
+
+Processing: sub-032409
+Processing: sub-032429
+Processing: sub-032344Processing: sub-032301
+
+Processing: sub-032502
+Processing: sub-032339
+Processing: sub-032457
+Processing: sub-032346
+An error occurred while processing sub-032414: Command '['recon-all', '-i', 'pre_mri/sub-032414/ses-01/anat/denoised.nii', '-s', 'sub-032414', '-all']' returned non-zero exit status 1.
+Processing: sub-032414
+An error occurred while processing sub-032414: Command '['mne', 'watershed_bem', '-s', 'sub-032414']' returned non-zero exit status 1.
+Processing: sub-032314
+An error occurred while processing sub-032526: Command '['recon-all', '-i', 'pre_mri/sub-032526/ses-01/anat/denoised.nii', '-s', 'sub-032526', '-all']' returned non-zero exit status 1.
+Processing: sub-032526
+An error occurred while processing sub-032336: Command '['recon-all', '-i', 'pre_mri/sub-032336/ses-01/anat/denoised.nii', '-s', 'sub-032336', '-all']' returned non-zero exit status 1.
+Processing: sub-032336
+Successfully processed sub-032526
+Processing: sub-032335
+Successfully processed sub-032336
+Processing: sub-032303
+An error occurred while processing sub-032389: Command '['recon-all', '-i', 'pre_mri/sub-032389/ses-01/anat/denoised.nii', '-s', 'sub-032389', '-all']' returned non-zero exit status 1.
+Processing: sub-032389
+Successfully processed sub-032389
+Processing: sub-032355
+Successfully processed sub-032342
+Processing: sub-032342
+Successfully processed sub-032342
+Processing: sub-032432
+Successfully processed sub-032369
+Processing: sub-032369
+Successfully processed sub-032369
+Processing: sub-032328
+Successfully processed sub-032482
+Processing: sub-032482
+Successfully processed sub-032457
+Processing: sub-032457
+Successfully processed sub-032301
+Processing: sub-032301
+Successfully processed sub-032482
+Processing: sub-032373

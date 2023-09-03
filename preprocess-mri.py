@@ -104,7 +104,7 @@ def process_images(uni_filename, inv1_filename, inv2_filename, output_filename, 
     # is not the ase when the image is bias field corrected, in which case the
     # noise estimated at the edge of the imagemight not be such a good measure
 
-    multiplyingFactor = 55
+    multiplyingFactor = 60
     noiselevel = multiplyingFactor*np.mean(INV2img_img[:, -11:, -11:])
 
     # % MP2RAGEimgRobustScanner = MP2RAGErobustfunc(INV1img.img, INV2img.img, noiselevel. ^ 2)
