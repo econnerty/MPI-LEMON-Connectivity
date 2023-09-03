@@ -78,3 +78,387 @@ Successfully processed sub-032301
 Processing: sub-032301
 Successfully processed sub-032482
 Processing: sub-032373
+Successfully processed sub-032457
+Processing: sub-032514
+Successfully processed sub-032301
+Processing: sub-032400
+Successfully processed sub-032324
+Processing: sub-032324
+Successfully processed sub-032383
+Processing: sub-032383
+Successfully processed sub-032338
+Processing: sub-032338
+Successfully processed sub-032324
+Processing: sub-032358
+Successfully processed sub-032528
+Processing: sub-032528
+Successfully processed sub-032450
+Processing: sub-032450
+Successfully processed sub-032392
+Processing: sub-032392
+Successfully processed sub-032383
+Processing: sub-032431
+Successfully processed sub-032528
+Processing: sub-032402
+Successfully processed sub-032392
+Processing: sub-032325
+Successfully processed sub-032338
+Processing: sub-032436
+Successfully processed sub-032314
+Processing: sub-032314
+Successfully processed sub-032450
+Processing: sub-032407
+Successfully processed sub-032487
+Processing: sub-032487
+Successfully processed sub-032397
+Processing: sub-032397
+Successfully processed sub-032379
+Processing: sub-032379
+Successfully processed sub-032314
+Processing: sub-032508
+Successfully processed sub-032344
+Processing: sub-032344
+Successfully processed sub-032487
+Processing: sub-032452
+Successfully processed sub-032327
+Processing: sub-032327
+Successfully processed sub-032379
+Processing: sub-032374
+Successfully processed sub-032395
+Processing: sub-032395
+Successfully processed sub-032344
+Processing: sub-032430
+Successfully processed sub-032397
+Processing: sub-032393
+Successfully processed sub-032382
+Processing: sub-032382
+Successfully processed sub-032327
+Processing: sub-032404
+Successfully processed sub-032521
+Processing: sub-032521
+Successfully processed sub-032334
+Processing: sub-032334
+Successfully processed sub-032395
+Processing: sub-032378
+Successfully processed sub-032332
+Processing: sub-032332
+Successfully processed sub-032382
+Processing: sub-032375
+Successfully processed sub-032334
+Processing: sub-032501
+Successfully processed sub-032521
+Processing: sub-032426
+An error occurred while processing sub-032436: Command '['recon-all', '-i', 'pre_mri/sub-032436/ses-01/anat/denoised.nii', '-s', 'sub-032436', '-all']' returned non-zero exit status 1.
+Processing: sub-032436
+Successfully processed sub-032332
+Processing: sub-032469
+Successfully processed sub-032436
+Processing: sub-032365
+Successfully processed sub-032310
+Processing: sub-032310
+Successfully processed sub-032410
+Processing: sub-032410
+Successfully processed sub-032387
+Processing: sub-032387
+Successfully processed sub-032506
+Processing: sub-032506
+Successfully processed sub-032315
+Processing: sub-032315
+Successfully processed sub-032470
+Processing: sub-032470
+Successfully processed sub-032310
+Processing: sub-032419
+Successfully processed sub-032387
+Processing: sub-032443
+Successfully processed sub-032394
+Processing: sub-032394
+Successfully processed sub-032506
+Processing: sub-032366
+Successfully processed sub-032315
+Processing: sub-032313
+Successfully processed sub-032410
+Processing: sub-032323
+Successfully processed sub-032470
+Processing: sub-032420
+Successfully processed sub-032429
+Processing: sub-032429
+Successfully processed sub-032460
+Processing: sub-032460
+Successfully processed sub-032411
+Processing: sub-032411
+Successfully processed sub-032394
+Processing: sub-032454
+An error occurred while processing sub-032443: Command '['recon-all', '-i', 'pre_mri/sub-032443/ses-01/anat/denoised.nii', '-s', 'sub-032443', '-all']' returned non-zero exit status 1.
+Processing: sub-032443
+An error occurred while processing sub-032443: Command '['mne', 'watershed_bem', '-s', 'sub-032443']' returned non-zero exit status 1.
+Processing: sub-032478
+Successfully processed sub-032484
+Processing: sub-032484
+Successfully processed sub-032429
+Processing: sub-032360
+Successfully processed sub-032411
+Processing: sub-032354
+Successfully processed sub-032460
+Processing: sub-032316
+Successfully processed sub-032339
+Processing: sub-032339
+Successfully processed sub-032484
+Processing: sub-032458
+Successfully processed sub-032346
+Processing: sub-032346
+Successfully processed sub-032409
+Processing: sub-032409
+Successfully processed sub-032339
+Processing: sub-032449
+Successfully processed sub-032346
+Processing: sub-032390
+Successfully processed sub-032409
+Processing: sub-032356
+Successfully processed sub-032335
+Processing: sub-032335
+Successfully processed sub-032433
+Processing: sub-032433
+Successfully processed sub-032362
+Processing: sub-032362
+Successfully processed sub-032359
+Processing: sub-032359
+Successfully processed sub-032433
+Processing: sub-032494
+Successfully processed sub-032503
+Processing: sub-032503
+Successfully processed sub-032335
+Processing: sub-032510
+Successfully processed sub-032352
+Processing: sub-032352
+Successfully processed sub-032359
+Processing: sub-032499
+An error occurred while processing sub-032458: Command '['recon-all', '-i', 'pre_mri/sub-032458/ses-01/anat/denoised.nii', '-s', 'sub-032458', '-all']' returned non-zero exit status 1.
+Processing: sub-032458
+Successfully processed sub-032362
+Processing: sub-032434
+Successfully processed sub-032503
+Processing: sub-032481
+Successfully processed sub-032396
+Processing: sub-032396
+Successfully processed sub-032352
+Processing: sub-032340
+Successfully processed sub-032458
+Processing: sub-032448
+Successfully processed sub-032396
+Processing: sub-032321
+Successfully processed sub-032418
+Processing: sub-032418
+Successfully processed sub-032418
+Processing: sub-032370
+Successfully processed sub-032438
+Processing: sub-032438
+Successfully processed sub-032438
+Processing: sub-032412
+An error occurred while processing sub-032373: Command '['recon-all', '-i', 'pre_mri/sub-032373/ses-01/anat/denoised.nii', '-s', 'sub-032373', '-all']' returned non-zero exit status 1.
+Processing: sub-032373
+Successfully processed sub-032373
+Processing: sub-032505
+Successfully processed sub-032502
+Processing: sub-032502
+Successfully processed sub-032502
+Processing: sub-032439
+An error occurred while processing sub-032303: Command '['recon-all', '-i', 'pre_mri/sub-032303/ses-01/anat/denoised.nii', '-s', 'sub-032303', '-all']' returned non-zero exit status 1.
+Processing: sub-032303
+An error occurred while processing sub-032303: Command '['mne', 'watershed_bem', '-s', 'sub-032303']' returned non-zero exit status 1.
+Processing: sub-032364
+Successfully processed sub-032355
+Processing: sub-032355
+Successfully processed sub-032431
+Processing: sub-032431
+Successfully processed sub-032374
+Processing: sub-032374
+Successfully processed sub-032355
+Processing: sub-032496
+Successfully processed sub-032431
+Processing: sub-032451
+Successfully processed sub-032400
+Processing: sub-032400
+Successfully processed sub-032374
+Processing: sub-032343
+Successfully processed sub-032400
+Processing: sub-032341
+Successfully processed sub-032514
+Processing: sub-032514
+Successfully processed sub-032328
+Processing: sub-032328
+Successfully processed sub-032365
+Processing: sub-032365
+Successfully processed sub-032514
+Processing: sub-032320
+Successfully processed sub-032328
+Processing: sub-032525
+An error occurred while processing sub-032452: Command '['recon-all', '-i', 'pre_mri/sub-032452/ses-01/anat/denoised.nii', '-s', 'sub-032452', '-all']' returned non-zero exit status 1.
+Processing: sub-032452
+Successfully processed sub-032365
+Processing: sub-032475
+Successfully processed sub-032452
+Processing: sub-032446
+Successfully processed sub-032404
+Processing: sub-032404
+Successfully processed sub-032404
+Processing: sub-032464
+Successfully processed sub-032402
+Processing: sub-032402
+Successfully processed sub-032430
+Processing: sub-032430
+Successfully processed sub-032430
+Processing: sub-032405
+Successfully processed sub-032402
+Processing: sub-032422
+Successfully processed sub-032358
+Processing: sub-032358
+Successfully processed sub-032358
+Processing: sub-032302
+Successfully processed sub-032508
+Processing: sub-032508
+Successfully processed sub-032378
+Processing: sub-032378
+Successfully processed sub-032508
+Processing: sub-032486
+Successfully processed sub-032323
+Processing: sub-032323
+Successfully processed sub-032316
+Processing: sub-032316
+Successfully processed sub-032375
+Processing: sub-032375
+Successfully processed sub-032378
+Processing: sub-032385
+Successfully processed sub-032366
+Processing: sub-032366
+Successfully processed sub-032325
+Processing: sub-032325
+Successfully processed sub-032375
+Processing: sub-032480
+Successfully processed sub-032323
+Processing: sub-032512
+Successfully processed sub-032407
+Processing: sub-032407
+Successfully processed sub-032316
+Processing: sub-032524
+Successfully processed sub-032366
+Processing: sub-032425
+Successfully processed sub-032325
+Processing: sub-032518
+Successfully processed sub-032481
+Processing: sub-032481
+Successfully processed sub-032449
+Processing: sub-032449
+Successfully processed sub-032407
+Processing: sub-032349
+Successfully processed sub-032481
+Processing: sub-032380
+Successfully processed sub-032419
+Processing: sub-032419
+Successfully processed sub-032420
+Processing: sub-032420
+Successfully processed sub-032449
+Processing: sub-032406
+Successfully processed sub-032313
+Processing: sub-032313
+Successfully processed sub-032393
+Processing: sub-032393
+Successfully processed sub-032420
+Processing: sub-032471
+Successfully processed sub-032426
+Processing: sub-032426
+Successfully processed sub-032419
+Processing: sub-032417
+Successfully processed sub-032393
+Processing: sub-032477
+Successfully processed sub-032313
+Processing: sub-032488
+Successfully processed sub-032426
+Processing: sub-032511
+Successfully processed sub-032340
+Processing: sub-032340
+Successfully processed sub-032494
+Processing: sub-032494
+Successfully processed sub-032370
+Processing: sub-032370
+Successfully processed sub-032478
+Processing: sub-032478
+Successfully processed sub-032494
+Processing: sub-032519
+Successfully processed sub-032340
+Processing: sub-032498
+Successfully processed sub-032370
+Processing: sub-032453
+Successfully processed sub-032478
+Processing: sub-032337
+Successfully processed sub-032499
+Processing: sub-032499
+Successfully processed sub-032390
+Processing: sub-032390
+Successfully processed sub-032469
+Processing: sub-032469
+Successfully processed sub-032390
+Processing: sub-032442
+Successfully processed sub-032501
+Processing: sub-032501
+Successfully processed sub-032499
+Processing: sub-032381
+Successfully processed sub-032469
+Processing: sub-032398
+Successfully processed sub-032501
+Processing: sub-032391
+Successfully processed sub-032434
+Processing: sub-032434
+An error occurred while processing sub-032453: Command '['recon-all', '-i', 'pre_mri/sub-032453/ses-01/anat/denoised.nii', '-s', 'sub-032453', '-all']' returned non-zero exit status 1.
+Processing: sub-032453
+Successfully processed sub-032434
+Processing: sub-032427
+Successfully processed sub-032510
+Processing: sub-032510
+Successfully processed sub-032453
+Processing: sub-032479
+Successfully processed sub-032321
+Processing: sub-032321
+Successfully processed sub-032510
+Processing: sub-032421
+Successfully processed sub-032321
+Processing: sub-032306
+Successfully processed sub-032454
+Processing: sub-032454
+Successfully processed sub-032354
+Processing: sub-032354
+Successfully processed sub-032454
+Processing: sub-032459
+Successfully processed sub-032354
+Processing: sub-032318
+Successfully processed sub-032356
+Processing: sub-032356
+Successfully processed sub-032360
+Processing: sub-032360
+Successfully processed sub-032505
+Processing: sub-032505
+Successfully processed sub-032356
+Processing: sub-032367
+Successfully processed sub-032360
+Processing: sub-032435
+Successfully processed sub-032448
+Processing: sub-032448
+Successfully processed sub-032505
+Processing: sub-032403
+Successfully processed sub-032448
+Processing: sub-032317
+Successfully processed sub-032412
+Processing: sub-032412
+Successfully processed sub-032412
+Processing: sub-032372
+Successfully processed sub-032364
+Processing: sub-032364
+An error occurred while processing sub-032372: Command '['recon-all', '-i', 'pre_mri/sub-032372/ses-01/anat/denoised.nii', '-s', 'sub-032372', '-all']' returned non-zero exit status 1.
+Processing: sub-032372
+Successfully processed sub-032364
+Processing: sub-032388
+Successfully processed sub-032372
+Processing: sub-032472
+Successfully processed sub-032439
+Processing: sub-032439
+Successfully processed sub-032439
+Processing: sub-032504

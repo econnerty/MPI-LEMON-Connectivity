@@ -38,7 +38,7 @@ def run_recon_all(subdir):
         print(f"Processing: {subject_name}")  # Print subject currently being processed   
         try:
             subprocess.run(cmd2, stdout=log_file, stderr=log_file, check=True) #bem solution
-            print(f"Successfully processed {subject_name}")
+            print(f"Successfully processed {subject_name} BEM SURFACE:w")
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while processing {subject_name}: {e}")
                 

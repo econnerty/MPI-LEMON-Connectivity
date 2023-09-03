@@ -1,0 +1,97 @@
+
+Running mri_watershed for BEM segmentation with the following parameters:
+
+Results dir = /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed
+Command = mri_watershed -useSRAS -surf /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/sub-032303 /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/mri/T1.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/ws
+
+Running subprocess: mri_watershed -useSRAS -surf /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/sub-032303 /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/mri/T1.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/ws
+
+Mode:          use surfaceRAS to save surface vertex positions
+Mode:          Saving out BEM surfaces
+
+*********************************************************
+The input file is /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/mri/T1.mgz
+The output file is /scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/ws
+
+*************************WATERSHED**************************
+Sorting...
+      T1-weighted MRI image
+      modification of the preflooding height to 15 percent
+      Count how many 110 voxels are present :  1943532
+
+      Find the largest 110-component...
+             heap usage = 4669144 Kbytes.
+             current max segment has 887236 voxels
+             removing small segments (less than 1 percent of maxarea).
+             heap usage = 2523592 Kbytes.
+             current max segment has 887236 voxels
+             removing small segments (less than 1 percent of maxarea).
+             heap usage = 2523592 Kbytes.
+             removing small segments (less than 1 percent of maxarea).done
+      And identify it as the main brain basin...done
+      Main component: 887236 voxels
+      first estimation of the COG coord: x=126 y=159 z=97 r=91
+      first estimation of the main basin volume: 3199663 voxels
+      global maximum in x=110, y=94, z=54, Imax=255
+      CSF=12, WM_intensity=110, WM_VARIANCE=5
+      WM_MIN=110, WM_HALF_MIN=110, WM_HALF_MAX=110, WM_MAX=110 
+      preflooding height equal to 15 percent
+done.
+Analyze...
+
+      main basin size= 5515451 voxels, voxel volume =1.000 
+                     = 5515451 mmm3 = 5515.451 cm3
+done.
+PostAnalyze...
+      ***** 0 basin(s) merged in 1 iteration(s)
+      ***** 0 voxel(s) added to the main basin
+      ambiguous basin, non merged: 0 ambiguous voxels; size: 1 voxels
+done.
+
+****************TEMPLATE DEFORMATION****************
+
+      second estimation of the COG coord: x=127,y=141, z=98, r=13967 iterations
+^^^^^^^^ couldn't find WM with original limits - expanding ^^^^^^
+
+   GLOBAL      CSF_MIN=1, CSF_intensity=2, CSF_MAX=4 , nb = 40878
+ Problem with the least square interpolation in GM_MIN calculation.
+   
+                     CSF_MAX  TRANSITION  GM_MIN  GM
+    GLOBAL     
+  before analyzing :    4,      5,        38,   71
+  after  analyzing :    4,      27,        38,   38
+      mri_strip_skull: done peeling brain
+      highly tesselated surface with 10242 vertices
+      matching...111 iterations
+
+*********************VALIDATION*********************
+curvature mean = -0.015, std = 0.022
+curvature mean = 100.615, std = 15.096
+
+No Rigid alignment: -atlas Mode Off (basic atlas / no registration)
+      before rotation: sse = 36.35, sigma = 94.67
+      after  rotation: sse = 36.35, sigma = 94.67
+Localization of inacurate regions: Erosion-Dilation steps
+      the sse mean is 44.29, its var is 71.06   
+      before Erosion-Dilatation 45.61% of inacurate vertices
+      after  Erosion-Dilatation  0.00% of inacurate vertices
+      Validation of the shape of the surface done.
+Scaling of atlas fields onto current surface fields
+
+********FINAL ITERATIVE TEMPLATE DEFORMATION********
+Compute Local values csf/gray
+Fine Segmentation...
+Traceback (most recent call last):
+  File "/home/erikc//.local/bin/mne", line 8, in <module>
+    sys.exit(main())
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/commands/utils.py", line 110, in main
+    cmd.run()
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/commands/mne_watershed_bem.py", line 117, in run
+    make_watershed_bem(
+  File "<decorator-gen-78>", line 12, in make_watershed_bem
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/bem.py", line 1327, in make_watershed_bem
+    run_subprocess_env(cmd)
+  File "<decorator-gen-2>", line 12, in run_subprocess
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/utils/misc.py", line 206, in run_subprocess
+    raise subprocess.CalledProcessError(
+subprocess.CalledProcessError: Command '['mri_watershed', '-useSRAS', '-surf', '/scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/sub-032303', '/scratch/MPI-LEMON/freesurfer/subjects/sub-032303/mri/T1.mgz', '/scratch/MPI-LEMON/freesurfer/subjects/sub-032303/bem/watershed/ws']' died with <Signals.SIGTERM: 15>.

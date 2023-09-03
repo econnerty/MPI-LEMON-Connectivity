@@ -1,0 +1,395 @@
+fs-check-version --s sub-032443 --o /tmp/tmp.8tb0A4
+Sat Sep  2 23:07:52 EDT 2023
+
+setenv SUBJECTS_DIR /scratch/MPI-LEMON/freesurfer/subjects
+cd /scratch/MPI-LEMON/MPI-LEMON-Connectivity
+/scratch/MPI-LEMON/freesurfer/bin/fs-check-version --s sub-032443 --o /tmp/tmp.8tb0A4
+-rwxrwxr-x 1 erikc erikc 18565 Jun 13 23:57 /scratch/MPI-LEMON/freesurfer/bin/fs-check-version
+
+freesurfer-linux-ubuntu22_x86_64-7.4.1-20230614-7eb8460
+$Id$
+Linux lina 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+pid 247804
+Current FS Version freesurfer-linux-ubuntu22_x86_64-7.4.1-20230614-7eb8460
+Subject does not have a bstampfile, copying /scratch/MPI-LEMON/freesurfer/build-stamp.txt
+Subject FS Version: freesurfer-linux-ubuntu22_x86_64-7.4.1-20230614-7eb8460
+No constraints on version because REQ=UnSet and FsVerFile=NotThere
+#@#% fs-check-version match = 1
+fs-check-version Done
+INFO: SUBJECTS_DIR is /scratch/MPI-LEMON/freesurfer/subjects
+Actual FREESURFER_HOME /scratch/MPI-LEMON/freesurfer
+Linux lina 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443
+
+ mri_convert /scratch/MPI-LEMON/MPI-LEMON-Connectivity/pre_mri/sub-032443/ses-01/anat/denoised.nii /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig/001.mgz 
+
+mri_convert /scratch/MPI-LEMON/MPI-LEMON-Connectivity/pre_mri/sub-032443/ses-01/anat/denoised.nii /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig/001.mgz 
+reading from /scratch/MPI-LEMON/MPI-LEMON-Connectivity/pre_mri/sub-032443/ses-01/anat/denoised.nii...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+writing to /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig/001.mgz...
+@#@FSTIME  2023:09:02:23:07:53 mri_convert N 2 e 8.85 S 0.08 U 8.59 P 97% M 50032 F 0 R 11026 W 0 c 103 w 5 I 84488 O 31968 L 55.26 53.62 52.92
+@#@FSLOADPOST 2023:09:02:23:08:01 mri_convert N 2 55.42 53.70 52.95
+#--------------------------------------------
+#@# MotionCor Sat Sep  2 23:08:02 EDT 2023
+Found 1 runs
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+Only one run found so motion
+correction will not be performed. I'll
+copy the run to rawavg and continue.
+
+ cp /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig/001.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz 
+
+
+ mri_info /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz 
+
+rawavg.mgz ========================================
+Volume information for /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz
+          type: MGH
+    dimensions: 176 x 240 x 256
+   voxel sizes: 1.000002, 1.000000, 1.000000
+          type: FLOAT (3)
+           fov: 256.000
+           dof: 1
+        xstart: -88.0, xend: 88.0
+        ystart: -120.0, yend: 120.0
+        zstart: -128.0, zend: 128.0
+            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =   1.0000, y_r =   0.0000, z_r =   0.0000, c_r =    -2.3859
+              : x_a =   0.0000, y_a =   1.0000, z_a =   0.0000, c_a =    -3.0802
+              : x_s =   0.0000, y_s =   0.0000, z_s =   1.0000, c_s =   -29.6541
+
+talairach xfm : 
+Orientation   : RAS
+Primary Slice Direction: axial
+
+voxel to ras transform:
+                1.0000   0.0000   0.0000   -90.3861
+                0.0000   1.0000   0.0000  -123.0802
+                0.0000   0.0000   1.0000  -157.6541
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant 1
+
+ras to voxel transform:
+                1.0000   0.0000   0.0000    90.3859
+                0.0000   1.0000   0.0000   123.0802
+                0.0000   0.0000   1.0000   157.6541
+                0.0000   0.0000   0.0000     1.0000
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443
+
+ mri_convert /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz --conform 
+
+mri_convert /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz --conform 
+reading from /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/rawavg.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 0 4072 1000, flo=0, fhi=0.999, dest_type=0
+Reslicing using trilinear interpolation 
+writing to /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz...
+@#@FSTIME  2023:09:02:23:08:06 mri_convert N 3 e 9.67 S 0.06 U 9.22 P 95% M 60340 F 0 R 21969 W 0 c 68 w 0 I 0 O 13872 L 54.75 53.59 52.92
+@#@FSLOADPOST 2023:09:02:23:08:16 mri_convert N 3 53.71 53.40 52.87
+
+ mri_add_xform_to_header -c /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talairach.xfm /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz 
+
+INFO: extension is mgz
+@#@FSTIME  2023:09:02:23:08:16 mri_add_xform_to_header N 4 e 1.91 S 0.03 U 1.80 P 96% M 23600 F 0 R 4566 W 0 c 20 w 1 I 0 O 13872 L 53.71 53.40 52.87
+@#@FSLOADPOST 2023:09:02:23:08:18 mri_add_xform_to_header N 4 53.71 53.40 52.87
+
+ mri_info /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz 
+
+orig.mgz ========================================
+Volume information for /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/orig.mgz
+          type: MGH
+    dimensions: 256 x 256 x 256
+   voxel sizes: 1.000000, 1.000000, 1.000000
+          type: UCHAR (0)
+           fov: 256.000
+           dof: 1
+        xstart: -128.0, xend: 128.0
+        ystart: -128.0, yend: 128.0
+        zstart: -128.0, zend: 128.0
+            TR: 0.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =  -1.0000, y_r =   0.0000, z_r =   0.0000, c_r =    -2.3859
+              : x_a =   0.0000, y_a =   0.0000, z_a =   1.0000, c_a =    -3.0802
+              : x_s =   0.0000, y_s =  -1.0000, z_s =   0.0000, c_s =   -29.6541
+
+talairach xfm : /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talairach.xfm
+Orientation   : LIA
+Primary Slice Direction: coronal
+
+voxel to ras transform:
+               -1.0000   0.0000   0.0000   125.6141
+                0.0000   0.0000   1.0000  -131.0802
+                0.0000  -1.0000   0.0000    98.3459
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant -1
+
+ras to voxel transform:
+               -1.0000  -0.0000  -0.0000   125.6141
+               -0.0000  -0.0000  -1.0000    98.3459
+               -0.0000   1.0000  -0.0000   131.0802
+               -0.0000  -0.0000  -0.0000     1.0000
+#--------------------------------------------
+#@# Talairach Sat Sep  2 23:08:18 EDT 2023
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+
+ mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+/usr/bin/bc
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+/scratch/MPI-LEMON/freesurfer/bin/mri_nu_correct.mni
+--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+nIters 1
+mri_nu_correct.mni 7.4.1
+Linux lina 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Sat Sep  2 23:08:18 EDT 2023
+tmpdir is ./tmp.mri_nu_correct.mni.248340
+cd /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.248340/nu0.mgz --dtype uchar
+AntsN4BiasFieldCorrectionFs done
+mri_convert ./tmp.mri_nu_correct.mni.248340/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+mri_convert ./tmp.mri_nu_correct.mni.248340/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+reading from ./tmp.mri_nu_correct.mni.248340/nu0.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to orig_nu.mgz...
+ 
+ 
+Sat Sep  2 23:14:44 EDT 2023
+mri_nu_correct.mni done
+@#@FSTIME  2023:09:02:23:08:18 mri_nu_correct.mni N 12 e 385.90 S 0.40 U 356.68 P 92% M 519904 F 0 R 150529 W 0 c 3871 w 110 I 0 O 25688 L 53.71 53.40 52.87
+@#@FSLOADPOST 2023:09:02:23:14:44 mri_nu_correct.mni N 12 52.04 52.30 52.45
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+mv -f /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+Started at Sat Sep 2 23:14:44 EDT 2023
+Ended   at Sat Sep  2 23:15:19 EDT 2023
+talairach_avi done
+@#@FSTIME  2023:09:02:23:14:44 talairach_avi N 4 e 34.47 S 1.30 U 25.62 P 78% M 255560 F 0 R 398566 W 0 c 820 w 206 I 0 O 295272 L 52.04 52.30 52.45
+@#@FSLOADPOST 2023:09:02:23:15:19 talairach_avi N 4 50.11 51.79 52.27
+
+ cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+lta_convert --src orig.mgz --trg /scratch/MPI-LEMON/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+7.4.1
+
+--src: orig.mgz src image (geometry).
+--trg: /scratch/MPI-LEMON/freesurfer/average/mni305.cor.mgz trg image (geometry).
+--inmni: transforms/talairach.xfm input MNI/XFM transform.
+--outlta: transforms/talairach.xfm.lta output LTA.
+--s: fsaverage subject name
+--ltavox2vox: output LTA as VOX_TO_VOX transform.
+ LTA read, type : 1
+ 1.09897  -0.00282   0.00191   2.92838;
+-0.00804   1.00056   0.36099   2.15794;
+ 0.00518  -0.38196   1.10928  -9.66980;
+ 0.00000   0.00000   0.00000   1.00000;
+setting subject to fsaverage
+Writing  LTA to file transforms/talairach.xfm.lta...
+lta_convert successful.
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri 
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri 
+#--------------------------------------------
+#@# Talairach Failure Detection Sat Sep  2 23:15:21 EDT 2023
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+talairach_afd: Talairach Transform: transforms/talairach.xfm OK (p=0.6884, pval=0.4932 >= threshold=0.0050)
+@#@FSTIME  2023:09:02:23:15:21 talairach_afd N 4 e 0.00 S 0.00 U 0.00 P 100% M 6064 F 0 R 220 W 0 c 1 w 1 I 0 O 0 L 49.86 51.71 52.24
+@#@FSLOADPOST 2023:09:02:23:15:21 talairach_afd N 4 49.86 51.71 52.24
+
+ awk -f /scratch/MPI-LEMON/freesurfer/bin/extract_talairach_avi_QA.awk /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talairach_avi.log 
+
+
+ tal_QC_AZS /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talairach_avi.log 
+
+TalAviQA: 0.97377
+z-score: 0
+#--------------------------------------------
+#@# Nu Intensity Correction Sat Sep  2 23:15:21 EDT 2023
+
+ mri_nu_correct.mni --i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4 
+
+/usr/bin/bc
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+/scratch/MPI-LEMON/freesurfer/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4
+nIters 2
+mri_nu_correct.mni 7.4.1
+Linux lina 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Sat Sep  2 23:15:21 EDT 2023
+tmpdir is ./tmp.mri_nu_correct.mni.254211
+cd /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.254211/nu0.mgz --dtype uchar
+AntsN4BiasFieldCorrectionFs done
+mri_binarize --i ./tmp.mri_nu_correct.mni.254211/nu0.mgz --min -1 --o ./tmp.mri_nu_correct.mni.254211/ones.mgz
+
+7.4.1
+cwd /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+cmdline mri_binarize --i ./tmp.mri_nu_correct.mni.254211/nu0.mgz --min -1 --o ./tmp.mri_nu_correct.mni.254211/ones.mgz 
+sysname  Linux
+hostname lina
+machine  x86_64
+user     erikc
+
+input      ./tmp.mri_nu_correct.mni.254211/nu0.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     ./tmp.mri_nu_correct.mni.254211/ones.mgz
+Binarizing based on threshold
+min        -1
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Starting parallel 1
+Found 16777216 values in range
+Counting number of voxels in first frame
+Found 16777215 voxels in final mask
+Writing output to ./tmp.mri_nu_correct.mni.254211/ones.mgz
+Count: 16777215 16777215.000000 16777216 99.999994
+mri_binarize done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.254211/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.254211/sum.junk --avgwf ./tmp.mri_nu_correct.mni.254211/input.mean.dat
+
+7.4.1
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.254211/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.254211/sum.junk --avgwf ./tmp.mri_nu_correct.mni.254211/input.mean.dat 
+sysname  Linux
+hostname lina
+machine  x86_64
+user     erikc
+whitesurfname  white
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.254211/ones.mgz
+Loading orig.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+
+Writing to ./tmp.mri_nu_correct.mni.254211/input.mean.dat
+mri_segstats done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.254211/ones.mgz --i ./tmp.mri_nu_correct.mni.254211/nu0.mgz --sum ./tmp.mri_nu_correct.mni.254211/sum.junk --avgwf ./tmp.mri_nu_correct.mni.254211/output.mean.dat
+
+7.4.1
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.254211/ones.mgz --i ./tmp.mri_nu_correct.mni.254211/nu0.mgz --sum ./tmp.mri_nu_correct.mni.254211/sum.junk --avgwf ./tmp.mri_nu_correct.mni.254211/output.mean.dat 
+sysname  Linux
+hostname lina
+machine  x86_64
+user     erikc
+whitesurfname  white
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.254211/ones.mgz
+Loading ./tmp.mri_nu_correct.mni.254211/nu0.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+
+Writing to ./tmp.mri_nu_correct.mni.254211/output.mean.dat
+mri_segstats done
+mris_calc -o ./tmp.mri_nu_correct.mni.254211/nu0.mgz ./tmp.mri_nu_correct.mni.254211/nu0.mgz mul .83708469307976169745
+Saving result to './tmp.mri_nu_correct.mni.254211/nu0.mgz' (type = MGH )                       [ ok ]
+mri_convert ./tmp.mri_nu_correct.mni.254211/nu0.mgz nu.mgz --like orig.mgz
+mri_convert ./tmp.mri_nu_correct.mni.254211/nu0.mgz nu.mgz --like orig.mgz 
+reading from ./tmp.mri_nu_correct.mni.254211/nu0.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+mri_make_uchar nu.mgz transforms/talairach.xfm nu.mgz
+type change took 0 minutes and 13 seconds.
+FIRST_PERCENTILE 0.010000
+WM_PERCENTILE    0.900000
+MAX_R 50.000000
+i1 = 2, i2 = 98
+#mri_make_uchar# mapping  4 211 to  3 110  :  b 0.311458 m 0.520224 : thresh -0.5987 maxsat 489.574 : nzero 0 nsat 0
+ 
+ 
+Sat Sep  2 23:22:11 EDT 2023
+mri_nu_correct.mni done
+@#@FSTIME  2023:09:02:23:15:21 mri_nu_correct.mni N 9 e 409.74 S 1.19 U 399.11 P 97% M 614500 F 0 R 514319 W 0 c 1552 w 176 I 0 O 65776 L 49.86 51.71 52.24
+@#@FSLOADPOST 2023:09:02:23:22:11 mri_nu_correct.mni N 9 56.14 51.23 51.56
+
+ mri_add_xform_to_header -c /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/transforms/talairach.xfm nu.mgz nu.mgz 
+
+INFO: extension is mgz
+@#@FSTIME  2023:09:02:23:22:11 mri_add_xform_to_header N 4 e 1.88 S 0.02 U 1.86 P 99% M 23812 F 0 R 4569 W 0 c 6 w 2 I 0 O 10864 L 56.14 51.23 51.56
+@#@FSLOADPOST 2023:09:02:23:22:13 mri_add_xform_to_header N 4 56.14 51.23 51.56
+#--------------------------------------------
+#@# Intensity Normalization Sat Sep  2 23:22:13 EDT 2023
+/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri
+
+ mri_normalize -g 1 -seed 1234 -mprage nu.mgz T1.mgz 
+
+using max gradient = 1.000
+setting seed for random number genererator to 1234
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+reading mri_src from nu.mgz...
+normalizing image...
+NOT doing gentle normalization with control points/label
+talairach transform
+ 1.09897  -0.00282   0.00191   2.92838;
+-0.00804   1.00056   0.36099   2.15794;
+ 0.00518  -0.38196   1.10928  -9.66980;
+ 0.00000   0.00000   0.00000   1.00000;
+processing without aseg, no1d=0
+MRInormInit(): 
+INFO: Modifying talairach volume c_(r,a,s) based on average_305
+MRInormalize(): 
+MRIsplineNormalize(): npeaks = 5
+Starting OpenSpline(): npoints = 5
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+
+Iterating 2 times
+---------------------------------
+3d normalization pass 1 of 2
+error: No such file or directory
+error: MRInormFindControlPoints: could not find enough control points 
+error: No such file or directory
+error: MRInormFindControlPoints failed 
+Command exited with non-zero status 253
+@#@FSTIME  2023:09:02:23:22:13 mri_normalize N 7 e 20.76 S 0.30 U 18.73 P 91% M 436296 F 0 R 144463 W 0 c 265 w 1 I 0 O 0 L 56.14 51.23 51.56
+@#@FSLOADPOST 2023:09:02:23:22:33 mri_normalize N 7 57.51 51.90 51.78
+Linux lina 5.15.0-82-generic #91-Ubuntu SMP Mon Aug 14 14:14:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-032443 exited with ERRORS at Sat Sep  2 23:22:34 EDT 2023
+
+For more details, see the log file /scratch/MPI-LEMON/freesurfer/subjects/sub-032443/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/erikc//.local/bin/mne", line 8, in <module>
+    sys.exit(main())
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/commands/utils.py", line 110, in main
+    cmd.run()
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/commands/mne_watershed_bem.py", line 117, in run
+    make_watershed_bem(
+  File "<decorator-gen-78>", line 12, in make_watershed_bem
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/bem.py", line 1273, in make_watershed_bem
+    _check_fname(T1_mgz, overwrite="read", must_exist=True, name="MRI data")
+  File "<decorator-gen-0>", line 12, in _check_fname
+  File "/home/erikc/.local/lib/python3.10/site-packages/mne/utils/check.py", line 261, in _check_fname
+    raise FileNotFoundError(f'{name} does not exist: "{fname}"')
+FileNotFoundError: MRI data does not exist: "/scratch/MPI-LEMON/freesurfer/subjects/sub-032443/mri/T1.mgz"
